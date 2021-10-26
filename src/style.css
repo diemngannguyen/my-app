@@ -1,0 +1,102 @@
+h1 {
+  text-align: center;
+  font-family: "Spartan", sans-serif;
+  margin: 30px 20px;
+  color: #6dd1cc;
+}
+h2 {
+  color: lightseagreen;
+  text-align: left;
+  padding: 0 0 0 30px;
+  display: inline;
+}
+h3 {
+  color: lightseagreen;
+  font-size: 20px;
+  margin: 10px;
+}
+h5 {
+  margin: 0 0 10px 80px;
+}
+h6 {
+  color: plum;
+}
+.cloudy {
+  color: lightblue;
+  font-size: 100px;
+}
+
+a {
+  color: palevioletred;
+  font-size: 12px;
+  text-decoration: none;
+}
+.units {
+  color: lightseagreen;
+}
+.detail {
+  color: lightseagreen;
+  padding-left: 60px;
+}
+.input-group {
+  margin: 20px 0 0 15px;
+  padding: 0 45% 0 0;
+}
+.main-weather {
+  display: block;
+  margin: 0 0 0 35%;
+}
+.upcoming {
+  margin: 30px 30% 0 0;
+  text-align: center;
+  color: palevioletred;
+  line-height: 40px;
+}
+.col-sm-2 {
+  transition: all 200ms ease-in-out;
+}
+.col-sm-2:hover {
+  background-color: rgba(172, 230, 219, 0.3);
+  border-left: solid #7bc9c9;
+  border-right: solid #7bc9c9;
+  border-radius: 15%;
+}
+.cloudy-small {
+  padding-top: 17px;
+  font-size: 30px;
+  color: lightblue;
+}
+.rain {
+  padding-top: 17px;
+  font-size: 32px;
+  color: #4d80b0;
+}
+.sun-cloud {
+  padding-top: 17px;
+  font-size: 30px;
+  color: peachpuff;
+}
+.prediction {
+  color: palevioletred;
+}
+.form-control {
+  width: 460px;
+  border: 1px solid #f7e1ea;
+  border-radius: 100px;
+  padding: 10px 100px 10px 20px;
+  line-height: 1;
+  box-sizing: border-box;
+  outline: none;
+}
+.btn {
+  position: absolute;
+  right: 155px;
+  border: 0;
+  background: #6dd1cc;
+  color: #fff;
+  outline: none;
+  margin: 0 1px;
+  padding: 30 50px;
+  border-radius: 100px;
+  z-index: 2;
+}
