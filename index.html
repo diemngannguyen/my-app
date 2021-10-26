@@ -30,74 +30,87 @@
       <h1>Oxford</h1>
       <div class="main-weather">
         <div class="row justify-content-center">
-        <div class="col-3">
-          <i class="fas fa-cloud cloudy"></i>
-          <h2><span class="curr-temp">20°C</span></h2>
-          <h3>Light cloud</h3>
-        </div>
-        <div class="col">
-          <div class="detail">
-            <h4 id="date">Saturday 11th Aug</h4>
-            <h5 id="time">13:01</h5>
-            <p>Humidity: <span class="prediction humid">57%</span></p>
-            <p>Wind: <span class="prediction wind">9%</span></p>
+          <div class="col-3">
+            <i class="fas fa-cloud cloudy"></i>
+            <h2><span class="curr-temp">20°C</span></h2>
+            <h3>Light cloud</h3>
+          </div>
+          <div class="col">
+            <div class="detail">
+              <h4 id="date">Saturday 11th Aug</h4>
+              <h5 id="time">13:01</h5>
+              <p>Humidity: <span class="prediction humid">57%</span></p>
+              <p>Wind: <span class="prediction wind">9%</span></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="input-group mb-3">
-        <form id ="city-form">
-          <div class="d-table-cell w-100">
-          <input
-          type="search-city" 
-          class="form-control"
-          id="city-search-input"
-          placeholder="Enter a city"
-          aria-label="Recipient's city"
-          aria-describedby="button-addon2"
-        />
-      </div>
-        <div class="d-table-cell align-middle">
-          <Button class="btn btn-outline-secondary"
-          type="submit"
-          id="button-addon2"
-          value="search">Search</Button>
+        <div class="input-group mb-3">
+          <form id="city-form">
+            <div class="d-table-cell w-100">
+              <input
+                type="search-city"
+                class="form-control"
+                id="city-search-input"
+                placeholder="Enter a city"
+                aria-label="Recipient's city"
+                aria-describedby="button-addon2"
+              />
+            </div>
+            <div class="d-table-cell align-middle">
+              <button
+                class="btn btn-outline-secondary"
+                type="submit"
+                id="button-addon2"
+                value="search"
+              >
+                Search
+              </button>
+            </div>
+            <div class="d-table-cell align-middle">
+              <button
+                class="btn btn-outline-secondary current-loc"
+                type="submit"
+                id="current-location"
+                value="search"
+              >
+                Current
+              </button>
+            </div>
+          </form>
         </div>
-        <div class="d-table-cell align-middle">
-          <Button class="btn btn-outline-secondary current-loc" 
-          type="submit"
-          id="current-location"
-          value="search">Current</button>
+        <div class="upcoming">
+          <div class="row">
+            <div class="col-sm-2">
+              <h6>Sun</h6>
+              <i class="fas fa-cloud cloudy-small"></i>
+              <p>20°</p>
+            </div>
+            <div class="col-sm-2">
+              <h6>Mon</h6>
+              <i class="fas fa-cloud-rain rain"></i>
+              <p>19°</p>
+            </div>
+            <div class="col-sm-2">
+              <h6>Tue</h6>
+              <i class="fas fa-cloud-sun sun-cloud"></i>
+              <p>21°</p>
+            </div>
+            <div class="col-sm-2">
+              <h6>Wed</h6>
+              <i class="fas fa-cloud-sun sun-cloud"></i>
+              <p>21°</p>
+            </div>
+            <div class="col-sm-2">
+              <h6>Thur</h6>
+              <i class="fas fa-cloud-sun sun-cloud"></i>
+              <p>22°</p>
+            </div>
+          </div>
         </div>
-       </form>
-      </div>
-      <div class="upcoming">
-        <div class="row">
-        <div class="col-sm-2">
-          <h6>Sun</h6>
-          <i class="fas fa-cloud cloudy-small"></i>
-          <p>20°</p>
-        </div>
-         <div class="col-sm-2">
-          <h6>Mon</h6>
-          <i class="fas fa-cloud-rain rain"></i>
-          <p>19°</p>
-        </div>
-         <div class="col-sm-2">
-          <h6>Tue</h6>
-          <i class="fas fa-cloud-sun sun-cloud"></i>
-          <p>21°</p>
-        </div>
-           <div class="col-sm-2">
-          <h6>Wed</h6>
-          <i class="fas fa-cloud-sun sun-cloud"></i>
-          <p>21°</p>
-        </div>
-            <div class="col-sm-2">   
-          <h6>Thur</h6>
-          <i class="fas fa-cloud-sun sun-cloud"></i>
-          <p>22°</p>
-        </div>
-      </div>
+      </div class="open-source">
+      <a href="https://github.com/diemngannguyen/my-app" target="_blank"
+        >Open-source Code</a
+      ><span class="creator">by Diem Nguyen</span>
     </div>
     <script src="src/index.js"></script>
   </body>
