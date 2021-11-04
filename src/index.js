@@ -67,9 +67,9 @@ let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", findCity);
 
 function showTemperature(response) {
-  let celciusTemperature = Math.round(response.data.main.temp);
+  let celsiusTemperature = Math.round(response.data.main.temp);
   let temperatureDisplay = document.querySelector("h2");
-  temperatureDisplay.innerHTML = `${celciusTemperature}`;
+  temperatureDisplay.innerHTML = `${celsiusTemperature}`;
   let weatherDescription = document.querySelector("h3");
   let desc = `${response.data.weather[0].description}`;
   weatherDescription.innerHTML = `${desc}`;
@@ -102,10 +102,6 @@ function getCurrentPosition(event) {
 
 let currentButton = document.querySelector(".current-loc");
 currentButton.addEventListener("click", getCurrentPosition);
-
-function getFahrenheitTemperature(event) {
-  let h2 = document.querySelector("h2");
-}
 
 // function changeCelTemp(event) {
 //   event.preventDefault;
