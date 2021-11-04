@@ -55,9 +55,9 @@ h5.innerHTML = `${hours}:${minutes}`;
 function findCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-search-input");
-  let h1 = document.querySelector("h1");
+  let cityName = document.querySelector("h1");
   let cityChoice = searchInput.value;
-  h1.innerHTML = searchInput.value;
+  cityName.innerHTML = searchInput.value;
   let apiKey = `ce1871a4e8d3834f1e106be5fdeb2ff1`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityChoice}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
@@ -67,9 +67,9 @@ let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", findCity);
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${temperature}°C`;
+  let celciusTemperature = Math.round(response.data.main.temp);
+  let temperatureDisplay = document.querySelector("h2");
+  temperatureDisplay.innerHTML = `${celciusTemperature}`;
   let h3 = document.querySelector("h3");
   let desc = `${response.data.weather[0].description}`;
   h3.innerHTML = `${desc}`;
@@ -102,6 +102,10 @@ function getCurrentPosition(event) {
 
 let currentButton = document.querySelector(".current-loc");
 currentButton.addEventListener("click", getCurrentPosition);
+
+function getFahrenheitTemperature(event) {
+  let h2 = document.querySelector("h2");
+}
 
 // function changeCelTemp(event) {
 //   event.preventDefault;
