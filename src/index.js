@@ -104,7 +104,7 @@ function getLocation(position) {
 }
 
 function getCurrentPosition(event) {
-  event.preventDefault;
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(getLocation);
 }
 
