@@ -88,6 +88,12 @@ function showTemperature(response) {
   celsiusTemp = `${response.data.main.temp}`;
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-search-input").value;
+  searchCity(city);
+}
+
 function getLocation(position) {
   console.log(position);
   let apiKey = `ce1871a4e8d3834f1e106be5fdeb2ff1`;
@@ -124,6 +130,8 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+searchCity("Oxford");
 
 // function changeCelTemp(event) {
 //   event.preventDefault;
