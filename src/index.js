@@ -84,6 +84,8 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celsiusTemp = `${response.data.main.temp}`;
 }
 
 function getLocation(position) {
@@ -103,12 +105,32 @@ function getCurrentPosition(event) {
 let currentButton = document.querySelector(".current-loc");
 currentButton.addEventListener("click", getCurrentPosition);
 
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureDisplay = document.querySelector("h2");
+  temperatureDisplay.innerHTML = Math.round(`${celsiusTemp}`);
+}
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (`${celsiusTemp}` * 9) / 5 + 32;
+  let temperatureDisplay = document.querySelector("h2");
+  temperatureDisplay.innerHTML = Math.round(`${fahrenheitTemperature}`);
+}
+
+let celsiusTemp = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
 // function changeCelTemp(event) {
 //   event.preventDefault;
 //   let h2 = document.querySelector("h2");
 //   h2.innerHTML = "19";
 // }
-// let celciusTempChange = document.querySelector("#celcius");
+// let celciusTempChange = document.querySelector("#celsius-link");
 // celciusTempChange.addEventListener("click", changeCelTemp);
 
 // function changeFahTemp(event) {
@@ -116,5 +138,5 @@ currentButton.addEventListener("click", getCurrentPosition);
 //   let h2 = document.querySelector("h2");
 //   h2.innerHTML = "66";
 // }
-// let fahrenheitTempChange = document.querySelector("#fahrenheit");
+// let fahrenheitTempChange = document.querySelector("#fahrenheit-link");
 // fahrenheitTempChange.addEventListener("click", changeFahTemp);
