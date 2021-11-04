@@ -70,9 +70,9 @@ function showTemperature(response) {
   let celciusTemperature = Math.round(response.data.main.temp);
   let temperatureDisplay = document.querySelector("h2");
   temperatureDisplay.innerHTML = `${celciusTemperature}`;
-  let h3 = document.querySelector("h3");
+  let weatherDescription = document.querySelector("h3");
   let desc = `${response.data.weather[0].description}`;
-  h3.innerHTML = `${desc}`;
+  weatherDescription.innerHTML = `${desc}`;
   let humid = document.querySelector(".humid");
   let humidity = `${response.data.main.humidity}`;
   humid.innerHTML = `${humidity}%`;
