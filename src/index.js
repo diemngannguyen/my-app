@@ -52,6 +52,36 @@ h5.innerHTML = `${hours}:${minutes}`;
 // let cityForm = document.querySelector("#city-form");
 // cityForm.addEventListener("submit", searchCity);
 
+function displayUpcomingForecast() {
+  let forecastElement = document.querySelector("#upcoming-weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `         <div class="col-sm-2">
+              <div class="weather-forecast-date">
+              <h6>${day}</h6>
+               <img
+                  src="http://openweathermap.org/img/wn/04d@2x.png"
+                  alt=""
+                  width="42"
+                  class="forecast-icon"
+                />
+                <div class="weather-forecast-temps">
+                  <span class="weather-forecast-temp-max"> 13° </span>
+                  <span class="weather-forecast-temp-min"> 9° </span>
+                </div>
+              </div>
+              </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function findCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-search-input");
@@ -124,6 +154,8 @@ function displayFahrenheitTemp(event) {
 }
 
 let celsiusTemp = null;
+
+displayUpcomingForecast();
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
