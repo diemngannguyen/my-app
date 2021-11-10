@@ -36,7 +36,7 @@ a {
 }
 .detail {
   color: lightseagreen;
-  padding-left: 60px;
+  padding-left: 40px;
 }
 .input-group {
   margin: 20px 0 0 15px;
@@ -61,7 +61,7 @@ a {
   border-right: solid #7bc9c9;
   border-radius: 15%;
 }
-.cloudy-small {
+/* .cloudy-small {
   padding-top: 17px;
   font-size: 30px;
   color: lightblue;
@@ -70,12 +70,12 @@ a {
   padding-top: 17px;
   font-size: 32px;
   color: #4d80b0;
-}
-.sun-cloud {
+} */
+/* .sun-cloud {
   padding-top: 17px;
   font-size: 30px;
   color: peachpuff;
-}
+} */
 .prediction {
   color: palevioletred;
 }
@@ -106,4 +106,12 @@ a {
 }
 .open-source {
   text-align: center;
+}
+.forecast-icon {
+  padding-top: 10px;
+  width: 50px;
+}
+.weather-forecast-temp-min {
+  opacity: 0.5;
+  color: lightseagreen;
 }
