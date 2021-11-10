@@ -52,34 +52,41 @@ h5.innerHTML = `${hours}:${minutes}`;
 // let cityForm = document.querySelector("#city-form");
 // cityForm.addEventListener("submit", searchCity);
 
-function displayUpcomingForecast() {
+function displayUpcomingForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#upcoming-weather-forecast");
-
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
+  // let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `         <div class="col-sm-2">
               <div class="weather-forecast-date">
-              <h6>${day}</h6>
+              <h6>${forecastDay.dt}</h6>
                <img
-                  src="http://openweathermap.org/img/wn/04d@2x.png"
+                  src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
                   alt=""
                   width="42"
                   class="forecast-icon"
                 />
                 <div class="weather-forecast-temps">
-                  <span class="weather-forecast-temp-max"> 13° </span>
-                  <span class="weather-forecast-temp-min"> 9° </span>
+                  <span class="weather-forecast-temp-max">${forecastDay.temp.max}</span>
+                  <span class="weather-forecast-temp-min"> ${forecastDay.temp.min} </span>
                 </div>
               </div>
               </div>`;
   });
 
   forecastHTML = forecastHTML + `</div>`;
-
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `ce1871a4e8d3834f1e106be5fdeb2ff1`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayUpcomingForecast);
 }
 
 function findCity(event) {
@@ -116,6 +123,8 @@ function showTemperature(response) {
   );
 
   celsiusTemp = `${response.data.main.temp}`;
+
+  getForecast(response.data.coord);
 }
 
 function handleSubmit(event) {
@@ -155,7 +164,7 @@ function displayFahrenheitTemp(event) {
 
 let celsiusTemp = null;
 
-displayUpcomingForecast();
+// displayUpcomingForecast();
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
@@ -163,7 +172,7 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
-searchCity("Oxford");
+// searchCity("Oxford");
 
 // function changeCelTemp(event) {
 //   event.preventDefault;
